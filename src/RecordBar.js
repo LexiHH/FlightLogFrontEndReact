@@ -1,19 +1,15 @@
 import React from 'react';
 import './NavBar.css';
 
-function NavBar() {
+function RecordBar() {
     const btninfo = [
         {
-            label: 'Flight Log',
-            link: '/flightlog',
+            label: 'Edit',
+            link: '/edit',
         },
         {
-            label: 'Airfield Log',
-            link: '/airfieldlog',
-        },
-        {
-            label: 'Create New Flight',
-            link: '/createflight',
+            label: 'Delete',
+            link: '/delete',
         },
     ];
     //squirly brackets force it to read in javascript until it comes across react - then it will read in react again
@@ -22,7 +18,7 @@ function NavBar() {
     return (
         <div style={{ backgroundColor: 'rgba(9,16,62,1)' }}>
             {
-                btninfo.map(item => <button className="navigate">{item.label}</button>)
+                btninfo.map(item => <button className="navigate" style = {{width: '50%'}}>{item.label}</button>)
             }
 
         
@@ -31,4 +27,4 @@ function NavBar() {
     )
 }
 
-export default NavBar;
+export default RecordBar;
