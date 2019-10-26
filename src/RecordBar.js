@@ -16,13 +16,10 @@ function RecordBar() {
     //<button> etc creates a button with the item label, item => passes each item of the btninfo array into
     //that button function to make the button, btninfo.map returns an array of these resulting labeled buttons
     return (
-        <div style={{ backgroundColor: 'rgba(9,16,62,1)' }}>
+        <div style={{ borderRadius: '15px', display: 'flex', flexWrap: 'wrap' }}>
             {
-                btninfo.map(item => <button className="navigate" style = {{width: '50%'}}>{item.label}</button>)
+                btninfo.map(item => <button className="navigate" key={item.label} style={{borderRadius:'15px', margin: '5px', flexGrow: '1'}}>{item.label}</button>)
             }
-
-        
-
         </div>
     )
 }

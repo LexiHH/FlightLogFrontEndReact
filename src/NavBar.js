@@ -22,7 +22,7 @@ function NavBar() {
     return (
         <div style={{ backgroundColor: 'rgba(9,16,62,1)' }}>
             {
-                btninfo.map(item => <button className="navigate">{item.label}</button>)
+                btninfo.map(item => <button className="navigate" key={item.label} >{item.label}</button>)
             }
 
         
