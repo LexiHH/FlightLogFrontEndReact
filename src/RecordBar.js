@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
 import './NavBar.css';
+import DeleteConfirmation from './DeleteConfirmation';
+import './DeleteConfirmation.css';
 
 
 async function deleteFlight(specificFlightFields, onModify) {
@@ -20,6 +22,7 @@ async function createFlight(specificFlightFields, onModify) {
 }
 
 function RecordBar({specificFlightFields, onModify}) {
+    const [showConfirmBox, setShowConfirmBox] = useState(false);
     let btninfo;
     if(!specificFlightFields.idnumber) {
         btninfo = [
@@ -41,7 +44,7 @@ function RecordBar({specificFlightFields, onModify}) {
             },
             {
                 label: 'Delete',
-                onClick: () => deleteFlight(specificFlightFields, onModify),
+                onClick: () => setShowConfirmBox(true),
             },
         ];
     }
@@ -49,10 +52,13 @@ function RecordBar({specificFlightFields, onModify}) {
     //<button> etc creates a button with the item label, item => passes each item of the btninfo array into
     //that button function to make the button, btninfo.map returns an array of these resulting labeled buttons
     return (
-        <div style={{ borderRadius: '15px', display: 'flex', flexWrap: 'wrap' }}>
-            {
-                btninfo.map(item => <div className="navigate" key={item.label} style={{borderRadius:'15px', margin: '5px', flexGrow: '1'}} onClick = {item.onClick}>{item.label}</div>)
-            }
+        <div>
+            <div style={{ borderRadius: '15px', display: 'flex', flexWrap: 'wrap' }}>
+                {
+                    btninfo.map(item => <div className="navigate" key={item.label} style={{borderRadius:'15px', margin: '5px', flexGrow: '1'}} onClick = {item.onClick}>{item.label}</div>)
+                }
+            </div>
+            {showConfirmBox ? <DeleteConfirmation deleteit={() => deleteFlight(specificFlightFields, onModify)} cancelit={() => setShowConfirmBox(false)}/> : null}
         </div>
     )
 }

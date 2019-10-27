@@ -1,5 +1,6 @@
 import React from 'react';
 import './NavBar.css';
+import {NavLink} from 'react-router-dom';
 
 function NavBar() {
     const btninfo = [
@@ -19,7 +20,7 @@ function NavBar() {
     return (
         <div style={{ backgroundColor: 'rgba(9,16,62,1)', position: 'fixed', top: 0, width: '100%'}}>
             {
-                btninfo.map((item) => <div className="navigate" key={item.label} >{item.label}</div>)
+                btninfo.map((item) => <NavLink to={item.link} activeClassName="thispage" className="navigate" key={item.label} >{item.label}</NavLink>)
             }
 
         

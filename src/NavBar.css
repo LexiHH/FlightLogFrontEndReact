@@ -1,4 +1,4 @@
-.navigate {
+.navigate, .thispage{
     text-align:center; 
     /* border-right: solid; */
     /* border-right-color:rgba(234,236,244,1);  */
@@ -12,14 +12,24 @@
     font-size:15px; 
     cursor: pointer;
     user-select: none;
+    text-decoration: none;
 }
-.navigate:hover {
+.navigate:hover, .thispage:hover{
         background-color: rgb(80, 80, 82); 
         border: 3px solid rgb(80, 80, 82); 
 }
 
-.navigate:active {
+.navigate:active, .thispage:hover{
     background-color: rgb(80, 80, 82); 
     border: 3px solid rgba(9,16,62,1); 
 }
 
+.thispage{
+    border-bottom-color: aqua;
+}
+
+.thispage:hover{
+    background-color: rgb(80, 80, 82); 
+    border: 3px solid rgb(80, 80, 82); 
+    border-bottom-color: aqua;
+}
