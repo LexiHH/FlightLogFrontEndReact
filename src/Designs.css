@@ -1,5 +1,5 @@
 .title {
-    padding-top:50px;
+    padding-top:100px;
     padding-bottom:50px;
     text-align:center;
     color:rgb(9,16,62);
@@ -15,7 +15,9 @@
     border-width:5px;
     border-radius:15px;
     border-color: rgb(9,16,62);
-    margin:10px;
+    margin:30px auto;
+    min-width: 280px;
+    max-width: 700px;
 }
 
 .textbox {
@@ -30,4 +32,43 @@
     color: rgb(80, 80, 82); 
     font-size: 15px;
 
+}
+
+.small {
+    display:none;
+}
+
+.big {
+    display:grid;
+}
+
+.collapseButton, .expandButton {
+        text-align:center; 
+        border-radius: 30px;
+        padding: 0px;
+        border-style:solid;
+        border-width: 4px;
+        border-color:rgba(9,16,62,1); 
+        display: inline-block;
+        background-color:rgba(9,16,62,1); 
+        color:rgba(234,236,244,1); 
+        font-family:'Courier New', monospace; 
+        font-size:30px; 
+        width:30px;
+        height:30px;
+        cursor: pointer;
+        user-select: none;
+}
+
+.expandButton {
+    transform: rotate(180deg);
+}
+
+.collapseButton:hover, .expandButton:hover {
+    background-color: rgb(80, 80, 82); 
+    border-color: rgb(80, 80, 82); 
+}
+
+.collapseButton:active, .expandButton:active {
+    border-color: rgba(9,16,62,1); 
 }
