@@ -7,14 +7,14 @@ function DeleteConfirmation({deleteit, cancelit}) {
     return (
         <div className='ontopofpage'>
             <div className='record' style={{backgroundColor: 'white', opacity:'1'}}>
-                <div style={{margin:'10px'}}>
-                    Are you sure?
+                <div style={{margin:'10px', fontFamily:"'Courier New', 'monospace'", color:'rgb(9,16,62)'}}>
+                    Are you sure you want to delete?
                 </div>
-                <div>
-                    <div className='navigate' style={{borderRadius: '15px'}} onClick={deleteit}>
+                <div style={{display: 'flex', flexWrap: 'wrap'}}>
+                    <div className='navigate' style={{borderRadius: '15px', flexGrow:'1', margin:'5px'}} onClick={deleteit}>
                         Delete
                     </div>
-                    <div className='navigate' style={{borderRadius: '15px'}} onClick={cancelit}>
+                    <div className='navigate' style={{borderRadius: '15px', flexGrow:'1', margin:'5px'}} onClick={cancelit}>
                         Cancel
                     </div>
                 </div>
