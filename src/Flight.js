@@ -15,18 +15,17 @@ function Flight({info, onModify}) {
     //{info} is the same as doing const info = props.info (object destructuring)
     return (
         <div className = 'record'>
-            <div className = 'labels'>
-                ID
+            <div style = {{display: 'flex'}}>
+                <input type = 'text' className = 'navigate' style = {{display: 'flex', width: '5%', borderRadius: '15px'}} value = {fields.idnumber} readOnly/>
+                <div className = 'labels'>
+                    Flight Date
+                </div>
+                <input type = 'text' className = 'textbox' value = {fields.flightdate || ''} onChange = {(event) => updateField(fields, setFields, 'flightdate', event.target.value)}/>
             </div>
-            <input type = 'text' className = 'textbox' value = {fields.idnumber} readOnly/>
             <div className = 'labels'>
                 Description
             </div>
             <input type = 'text' className = 'textbox' value = {fields.description || ''} onChange = {(event) => updateField(fields, setFields, 'description', event.target.value)}/>
-            <div className = 'labels'>
-                Flight Date
-            </div>
-            <input type = 'text' className = 'textbox' value = {fields.flightdate || ''} onChange = {(event) => updateField(fields, setFields, 'flightdate', event.target.value)}/>
             <div className={big ? 'big' : 'small'}>
                 <div className = 'labels'>
                     Flight Length

@@ -72,3 +72,22 @@
 .collapseButton:active, .expandButton:active {
     border-color: rgba(9,16,62,1); 
 }
+
+.showFilter, .hideFilter, .showSum, .hideSum {
+    padding:10px;
+    border:solid;
+    border-width:2px;
+    border-radius:15px;
+    border-color: rgb(9,16,62);
+    margin:30px auto;
+    min-width: 280px;
+    max-width: 700px;
+}
+
+.showFilter, .showSum {
+    display:grid;
+}
+
+.hideFilter, .hideSum{
+    display:none;
+}

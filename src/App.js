@@ -4,7 +4,6 @@ import './Designs.css';
 import NavBar from './NavBar';
 import FlightLogPage from './FlightLogPage';
 import AirfieldLogPage from './AirfieldLogPage';
-import DeleteConfirmation from './DeleteConfirmation';
 
 function App() {
   return (
