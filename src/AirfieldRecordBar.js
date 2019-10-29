@@ -4,20 +4,21 @@ import './NavBar.css';
 import DeleteConfirmation from './DeleteConfirmation';
 import './DeleteConfirmation.css';
 
+const { hostname } = location; 
 
 async function deleteAirfield(specificAirfieldFields, onModify) {
-    await axios.delete(`http://localhost:9001/deleteAirfield/${specificAirfieldFields.idnumber}`);
+    await axios.delete(`http://${hostname}:9001/deleteAirfield/${specificAirfieldFields.idnumber}`);
     //These are back ticks ` not ' - back ticks tell it that it's a string we can pass things into
     onModify();
 }
 
 async function updateAirfield(specificAirfieldFields, onModify) {
-    await axios.put(`http://localhost:9001/changeAirfield/${specificAirfieldFields.idnumber}/${specificAirfieldFields.picture}/${specificAirfieldFields.description}/${specificAirfieldFields.tips}/${specificAirfieldFields.pros}/${specificAirfieldFields.cons}/${specificAirfieldFields.landingfee}`);
+    await axios.put(`http://${hostname}:9001/changeAirfield/${specificAirfieldFields.idnumber}/${specificAirfieldFields.picture}/${specificAirfieldFields.description}/${specificAirfieldFields.tips}/${specificAirfieldFields.pros}/${specificAirfieldFields.cons}/${specificAirfieldFields.landingfee}`);
     onModify();
 }
 
 async function createAirfield(specificAirfieldFields, onModify) {
-    await axios.post(`http://localhost:9001/saveAirfield/${specificAirfieldFields.picture}/${specificAirfieldFields.description}/${specificAirfieldFields.tips}/${specificAirfieldFields.pros}/${specificAirfieldFields.cons}/${specificAirfieldFields.landingfee}`);
+    await axios.post(`http://${hostname}:9001/saveAirfield/${specificAirfieldFields.picture}/${specificAirfieldFields.description}/${specificAirfieldFields.tips}/${specificAirfieldFields.pros}/${specificAirfieldFields.cons}/${specificAirfieldFields.landingfee}`);
     onModify();
 }
 

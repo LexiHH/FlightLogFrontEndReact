@@ -4,8 +4,10 @@ import axios from 'axios';
 import Flight from './Flight';
 import './NavBar.css';
 
+const { hostname } = window.location;
+
 async function fetchData(setAllFlights) {
-    const response = await axios.get('http://localhost:9001/showAllFlight');
+    const response = await axios.get(`http://${hostname}:9001/showAllFlight`);
     setAllFlights(response.data);
 }
 
@@ -24,7 +26,7 @@ function updateSoloOrDual(setSoloOrDual, whatsInBox) {
 
 
 async function filterFlightAirfield(setAllFlights, airfield) {
-    const response = await axios.get(`http://localhost:9001/filterAirfield/${airfield}`);
+    const response = await axios.get(`http://${hostname}:9001/filterAirfield/${airfield}`);
     //These are back ticks ` not ' - back ticks tell it that it's a string we can pass things into
     setAllFlights(response.data);
 }
@@ -45,15 +47,15 @@ function onSumCancel(fetchData, setAllFlights, setShowSum, showSum, setHours, se
 }
 
  async function sumAllLandingsDates(setLandings, setHours, soloOrDual, fromDate, toDate) {
-    const landresponse = await axios.get(`http://localhost:9001/sumAllLandingsDates/${fromDate}/${toDate}`);
+    const landresponse = await axios.get(`http://${hostname}:9001/sumAllLandingsDates/${fromDate}/${toDate}`);
       //These are back ticks ` not ' - back ticks tell it that it's a string we can pass things into
     setLandings(landresponse.data);
     let sumresponse = null;
     if(!soloOrDual) {
-        sumresponse = await axios.get(`http://localhost:9001/sumFlighttimeBetween/${fromDate}/${toDate}`)
+        sumresponse = await axios.get(`http://${hostname}:9001/sumFlighttimeBetween/${fromDate}/${toDate}`)
     }
     else {
-        sumresponse = await axios.get(`http://localhost:9001/sumAllFlighttimeSoloDates/${soloOrDual}/${fromDate}/${toDate}`);     
+        sumresponse = await axios.get(`http://${hostname}:9001/sumAllFlighttimeSoloDates/${soloOrDual}/${fromDate}/${toDate}`);     
     }
     setHours(sumresponse.data);
 }

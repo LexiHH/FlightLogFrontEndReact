@@ -4,8 +4,10 @@ import axios from 'axios';
 import Airfield from './Airfield';
 import './NavBar.css';
 
+const { hostname } = location;
+
 async function fetchData(setAllAirfields) {
-    const response = await axios.get('http://localhost:9001/showAllAirfield');
+    const response = await axios.get(`http://${hostname}:9001/showAllAirfield`);
     setAllAirfields(response.data);
 }
 

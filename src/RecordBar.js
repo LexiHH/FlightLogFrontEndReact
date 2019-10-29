@@ -4,20 +4,21 @@ import './NavBar.css';
 import DeleteConfirmation from './DeleteConfirmation';
 import './DeleteConfirmation.css';
 
+const { hostname } = location;
 
 async function deleteFlight(specificFlightFields, onModify) {
-    await axios.delete(`http://localhost:9001/deleteFlight/${specificFlightFields.idnumber}`);
+    await axios.delete(`http://${hostname}:9001/deleteFlight/${specificFlightFields.idnumber}`);
     //These are back ticks ` not ' - back ticks tell it that it's a string we can pass things into
     onModify();
 }
 
 async function updateFlight(specificFlightFields, onModify) {
-    await axios.put(`http://localhost:9001/changeFlight/${specificFlightFields.idnumber}/${specificFlightFields.picture}/${specificFlightFields.description}/${specificFlightFields.flighttime}/${specificFlightFields.flightdate}/${specificFlightFields.passengers}/${specificFlightFields.airfield}/${specificFlightFields.callsign}/${specificFlightFields.landings}/${specificFlightFields.soloordual}`);
+    await axios.put(`http://${hostname}:9001/changeFlight/${specificFlightFields.idnumber}/${specificFlightFields.picture}/${specificFlightFields.description}/${specificFlightFields.flighttime}/${specificFlightFields.flightdate}/${specificFlightFields.passengers}/${specificFlightFields.airfield}/${specificFlightFields.callsign}/${specificFlightFields.landings}/${specificFlightFields.soloordual}`);
     onModify();
 }
 
 async function createFlight(specificFlightFields, onModify) {
-    await axios.post(`http://localhost:9001/saveFlight/${specificFlightFields.picture}/${specificFlightFields.description}/${specificFlightFields.flighttime}/${specificFlightFields.flightdate}/${specificFlightFields.passengers}/${specificFlightFields.airfield}/${specificFlightFields.callsign}/${specificFlightFields.landings}/${specificFlightFields.soloordual}`);
+    await axios.post(`http://${hostname}:9001/saveFlight/${specificFlightFields.picture}/${specificFlightFields.description}/${specificFlightFields.flighttime}/${specificFlightFields.flightdate}/${specificFlightFields.passengers}/${specificFlightFields.airfield}/${specificFlightFields.callsign}/${specificFlightFields.landings}/${specificFlightFields.soloordual}`);
     onModify();
 }
 
