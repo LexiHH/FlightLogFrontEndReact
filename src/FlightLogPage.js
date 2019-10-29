@@ -29,16 +29,19 @@ async function filterFlightAirfield(setAllFlights, airfield) {
     setAllFlights(response.data);
 }
 
-function onFilterCancel(fetchData, setAllFlights, setShowFilter, showFilter) {
+function onFilterCancel(fetchData, setAllFlights, setShowFilter, showFilter, setAirfield) {
     fetchData(setAllFlights);
     setShowFilter(!showFilter);
+    setAirfield('');
 }
 
-function onSumCancel(fetchData, setAllFlights, setShowSum, showSum, setHours, setLandings) {
+function onSumCancel(fetchData, setAllFlights, setShowSum, showSum, setHours, setLandings, setFromDate, setToDate) {
     fetchData(setAllFlights);
     setShowSum(!showSum);
     setHours();
     setLandings();
+    setFromDate('');
+    setToDate('');
 }
 
  async function sumAllLandingsDates(setLandings, setHours, soloOrDual, fromDate, toDate) {
@@ -46,7 +49,7 @@ function onSumCancel(fetchData, setAllFlights, setShowSum, showSum, setHours, se
       //These are back ticks ` not ' - back ticks tell it that it's a string we can pass things into
     setLandings(landresponse.data);
     let sumresponse = null;
-    if(soloOrDual === undefined || soloOrDual === "") {
+    if(!soloOrDual) {
         sumresponse = await axios.get(`http://localhost:9001/sumFlighttimeBetween/${fromDate}/${toDate}`)
     }
     else {
@@ -59,10 +62,10 @@ function FlightLogPage() {
     const [allFlights, setAllFlights] = useState([]);
     const [showFilter, setShowFilter] = useState(false);
     const [showSum, setShowSum] = useState(false);
-    const [airfield, setAirfield] = useState();
-    const [fromDate, setFromDate] = useState();
-    const [toDate, setToDate] = useState();
-    const [soloOrDual, setSoloOrDual] = useState();
+    const [airfield, setAirfield] = useState('');
+    const [fromDate, setFromDate] = useState('');
+    const [toDate, setToDate] = useState('');
+    const [soloOrDual, setSoloOrDual] = useState('');
     const [hours, setHours] = useState();
     const [landings, setLandings] = useState();
     
@@ -90,12 +93,12 @@ function FlightLogPage() {
                     <div className = 'labels' style={{textAlign: 'left'}}>
                         Airfield
                     </div>
-                    <input type = 'text' className = 'textbox' onChange = {(event) => updateAirfield(setAirfield, event.target.value)}/>
+                    <input type = 'text' className = 'textbox' value={airfield} onChange = {(event) => updateAirfield(setAirfield, event.target.value)}/>
                     <div>
                         <div className = 'navigate' style={{borderRadius: '15px', margin: '5px', width: '50px', textAlign: 'center'}} onClick = {() => filterFlightAirfield(setAllFlights, airfield)}>
                             Filter
                         </div>
-                        <div className = 'navigate' style={{borderRadius: '15px', margin: '5px', width: '50px', textAlign: 'center'}} onClick = {() => onFilterCancel(fetchData, setAllFlights, setShowFilter, showFilter)}>
+                        <div className = 'navigate' style={{borderRadius: '15px', margin: '5px', width: '50px', textAlign: 'center'}} onClick = {() => onFilterCancel(fetchData, setAllFlights, setShowFilter, showFilter, setAirfield)}>
                             Cancel
                         </div>
                     </div>
@@ -104,20 +107,20 @@ function FlightLogPage() {
                     <div className = 'labels' style={{textAlign: 'left'}}>
                         From Date
                     </div>
-                    <input type = 'text' className = 'textbox' onChange = {(event) => updateFromDate(setFromDate, event.target.value)}/>
+                    <input type = 'text' className = 'textbox' value={fromDate} onChange = {(event) => updateFromDate(setFromDate, event.target.value)}/>
                     <div className = 'labels' style={{textAlign: 'left'}}>
                         To Date
                     </div>
-                    <input type = 'text' className = 'textbox'onChange = {(event) => updateToDate(setToDate, event.target.value)}/>
+                    <input type = 'text' className = 'textbox' value={toDate} onChange = {(event) => updateToDate(setToDate, event.target.value)}/>
                     <div className = 'labels' style={{textAlign: 'left'}}>
                         Solo or Dual
                     </div>
-                    <input type = 'text' className = 'textbox' onChange = {(event) => updateSoloOrDual(setSoloOrDual, event.target.value)}/>
+                    <input type = 'text' className = 'textbox' value={soloOrDual} onChange = {(event) => updateSoloOrDual(setSoloOrDual, event.target.value)}/>
                     <div>
                         <div className = 'navigate' style={{borderRadius: '15px', margin: '5px', width: '50px', textAlign: 'center'}} onClick = {() => sumAllLandingsDates(setLandings, setHours, soloOrDual, fromDate, toDate)}>
                             Sum
                         </div>
-                        <div className = 'navigate' style={{borderRadius: '15px', margin: '5px', width: '50px', textAlign: 'center'}} onClick = {() => onSumCancel(fetchData, setAllFlights, setShowSum, showSum, setHours, setLandings)}>
+                        <div className = 'navigate' style={{borderRadius: '15px', margin: '5px', width: '50px', textAlign: 'center'}} onClick = {() => onSumCancel(fetchData, setAllFlights, setShowSum, showSum, setHours, setLandings, setFromDate, setToDate)}>
                             Cancel
                         </div>
                     </div>
