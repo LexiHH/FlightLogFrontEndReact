@@ -1,4 +1,4 @@
-.navigate, .thispage{
+.navigate, .thispage {
     text-align:center; 
     /* border-right: solid; */
     /* border-right-color:rgba(234,236,244,1);  */
@@ -11,6 +11,22 @@
 	font-family:'Courier New', monospace; 
     font-size:15px; 
     cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+}
+
+.navigatenohover{
+    text-align:center; 
+    /* border-right: solid; */
+    /* border-right-color:rgba(234,236,244,1);  */
+    /* width:120px; */
+    border: 3px solid rgba(9,16,62,1);
+    padding: 12px 22px;
+    display: inline-block;
+	background-color:rgba(9,16,62,1); 
+	color:rgba(234,236,244,1); 
+	font-family:'Courier New', monospace; 
+    font-size:15px; 
     user-select: none;
     text-decoration: none;
 }

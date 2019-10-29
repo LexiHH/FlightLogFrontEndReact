@@ -32,7 +32,7 @@ function checkFlighttime(currentFlighttime, errors, setErrors) {
 function checkCallsign(currentCallsign, errors, setErrors) {
     const allErrors = {...errors};
     let error = '';
-    if(currentCallsign.search(/\G-[A-Z]{4}$/)) {
+    if(currentCallsign.search(/G-[A-Z]{4}$/)) {
         error = 'Must be in format G- followed by three capital letters';
     }
     allErrors['callsign'] = error;
@@ -42,8 +42,8 @@ function checkCallsign(currentCallsign, errors, setErrors) {
 function checkPassengers(currentPassengers, errors, setErrors) {
     const allErrors = {...errors};
     let error = '';
-    if(currentPassengers === '20') {
-        error = 'A terrible error';
+    if(isNaN(currentPassengers) || parseInt(currentPassengers)>1000 || parseInt(currentPassengers)<0) {
+        error = 'Number of Passengers must be a number between 0 and 1000';
     }
     allErrors['passengers'] = error;
     setErrors(allErrors);
@@ -52,8 +52,8 @@ function checkPassengers(currentPassengers, errors, setErrors) {
 function checkSoloOrDual(currentSoloOrDual, errors, setErrors) {
     const allErrors = {...errors};
     let error = '';
-    if(currentSoloOrDual === '20') {
-        error = 'A terrible error';
+    if(currentSoloOrDual !== "Solo" && currentSoloOrDual !== "Dual") {
+        error = 'Must be either Solo or Dual (case sensitive)';
     }
     allErrors['soloordual'] = error;
     setErrors(allErrors);
@@ -62,8 +62,8 @@ function checkSoloOrDual(currentSoloOrDual, errors, setErrors) {
 function checkLandings(currentLandings, errors, setErrors) {
     const allErrors = {...errors};
     let error = '';
-    if(currentLandings === '20') {
-        error = 'A terrible error';
+    if(isNaN(currentLandings) || parseInt(currentLandings)>1000 || parseInt(currentLandings)<0) {
+        error = 'Number of Landings must be a number between 0 and 1000';
     }
     allErrors['landings'] = error;
     setErrors(allErrors);
@@ -85,7 +85,7 @@ function Flight({info, onModify}) {
     //{info} is the same as doing const info = props.info (object destructuring)
     return (
         <div className = 'record'>
-            <input type = 'text' className = 'navigate' style = {{display: 'flex', width: '5%', borderRadius: '15px', margin: '5px'}} value = {fields.idnumber} readOnly/>
+            <input type = 'text' className = 'navigatenohover' style = {{display: 'flex', width: '5%', borderRadius: '15px', margin: '5px'}} value = {fields.idnumber} readOnly/>
             <div>
                 <span className = 'labels'>
                         Flight Date
@@ -119,21 +119,21 @@ function Flight({info, onModify}) {
                     <span className = 'labels'>
                         Passengers
                     </span>
-                    <input type = 'text' className = 'textbox' style = {{border: 'none', backgroundColor: 'rgb(245, 246, 250)'}} value={errors.passengers} readOnly/>
+                    <input type = 'text' className = 'textbox' style = {{border: 'none', backgroundColor: 'rgb(245, 246, 250)', width: '450px', color: 'rgb(139,34,34)'}} value={errors.passengers} readOnly/>
                 </div>
                 <input type = 'text' className = 'textbox' value = {fields.passengers || ''} onBlur={() => checkPassengers(fields.passengers, errors, setErrors)} onChange = {(event) => updateField(fields, setFields, 'passengers', event.target.value)}/>
                 <div>    
                     <span className = 'labels'>
                         Solo or Dual
                     </span>
-                    <input type = 'text' className = 'textbox' style = {{border: 'none', backgroundColor: 'rgb(245, 246, 250)'}} value={errors.soloordual} readOnly/>
+                    <input type = 'text' className = 'textbox' style = {{border: 'none', backgroundColor: 'rgb(245, 246, 250)', width: '450px', color: 'rgb(139,34,34)'}} value={errors.soloordual} readOnly/>
                 </div>
                 <input type = 'text' className = 'textbox' value = {fields.soloordual || ''} onBlur={() => checkSoloOrDual(fields.soloordual, errors, setErrors)} onChange = {(event) => updateField(fields, setFields, 'soloordual', event.target.value)}/>
                 <div>    
                     <span className = 'labels'>
                         Landings
                     </span>
-                    <input type = 'text' className = 'textbox' style = {{border: 'none', backgroundColor: 'rgb(245, 246, 250)'}} value={errors.landings} readOnly/>
+                    <input type = 'text' className = 'textbox' style = {{border: 'none', backgroundColor: 'rgb(245, 246, 250)', width: '450px', color: 'rgb(139,34,34)'}} value={errors.landings} readOnly/>
                 </div>
                 <input type = 'text' className = 'textbox' value = {fields.landings || ''} onBlur={() => checkLandings(fields.landings, errors, setErrors)} onChange = {(event) => updateField(fields, setFields, 'landings', event.target.value)}/>
                 <div>    
