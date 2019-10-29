@@ -4,7 +4,7 @@ import './NavBar.css';
 import DeleteConfirmation from './DeleteConfirmation';
 import './DeleteConfirmation.css';
 
-const { hostname } = location; 
+const { location: { hostname } } = window; 
 
 async function deleteAirfield(specificAirfieldFields, onModify) {
     await axios.delete(`http://${hostname}:9001/deleteAirfield/${specificAirfieldFields.idnumber}`);
