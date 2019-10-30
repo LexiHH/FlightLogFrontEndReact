@@ -103,7 +103,7 @@ function Flight({info, onModify}) {
             <div className={big ? 'big' : 'small'}>
                 <div>
                     <span className = 'labels'>
-                        Flight Length
+                        Flight Length (mins)
                     </span>
                     <input type = 'text' className = 'textbox' style = {{border: 'none', backgroundColor: 'rgb(245, 246, 250)', width: '400px', color: 'rgb(139,34,34)'}} value={errors.flighttime} readOnly/>
                 </div>
