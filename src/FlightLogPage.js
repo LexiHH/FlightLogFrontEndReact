@@ -37,7 +37,7 @@ function onFilterCancel(fetchData, setAllFlights, setShowFilter, showFilter, set
     setAirfield('');
 }
 
-function onSumCancel(fetchData, setAllFlights, setShowSum, showSum, setHours, setLandings, setFromDate, setToDate) {
+function onSumCancel(fetchData, setAllFlights, setShowSum, showSum, setHours, setLandings, setFromDate, setToDate, setSoloOrDual) {
     fetchData(setAllFlights);
     setShowSum(!showSum);
     setHours();
