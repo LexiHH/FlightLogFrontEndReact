@@ -44,6 +44,7 @@ function onSumCancel(fetchData, setAllFlights, setShowSum, showSum, setHours, se
     setLandings();
     setFromDate('');
     setToDate('');
+    setSoloOrDual('');
 }
 
  async function sumAllLandingsDates(setLandings, setHours, soloOrDual, fromDate, toDate) {
@@ -122,7 +123,7 @@ function FlightLogPage() {
                         <div className = 'navigate' style={{borderRadius: '15px', margin: '5px', width: '50px', textAlign: 'center'}} onClick = {() => sumAllLandingsDates(setLandings, setHours, soloOrDual, fromDate, toDate)}>
                             Sum
                         </div>
-                        <div className = 'navigate' style={{borderRadius: '15px', margin: '5px', width: '50px', textAlign: 'center'}} onClick = {() => onSumCancel(fetchData, setAllFlights, setShowSum, showSum, setHours, setLandings, setFromDate, setToDate)}>
+                        <div className = 'navigate' style={{borderRadius: '15px', margin: '5px', width: '50px', textAlign: 'center'}} onClick = {() => onSumCancel(fetchData, setAllFlights, setShowSum, showSum, setHours, setLandings, setFromDate, setToDate, setSoloOrDual)}>
                             Cancel
                         </div>
                     </div>
