@@ -82,7 +82,7 @@ function FlightLogPage() {
             <header className="title">
                 Flight Log
             </header>
-            <div className = 'record' style={{padding: 'unset', textAlign: 'right', border: 'none', display: 'block'}}>
+            <div className = 'record' style={{padding: 'unset', textAlign: 'right', border: 'none', display: 'block', boxShadow: 'none'}}>
                 <div className = 'navigate' style={{borderRadius: '15px', margin: '5px', width: '50px'}} onClick= {() => setAllFlights([{}, ...allFlights])}>
                     Create
                 </div>
