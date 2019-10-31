@@ -95,7 +95,7 @@ function Flight({info, onModify}) {
             <input type = 'text' className = 'textbox' value = {fields.flightdate || ''} onBlur={() => checkFlightdate(fields.flightdate, errors, setErrors)} onChange = {(event) => updateField(fields, setFields, 'flightdate', event.target.value)}/>
             <div>
                 <span className = 'labels'>
-                    Description
+                    Description blah
                 </span>
                 <input type = 'text' className = 'textbox' style = {{border: 'none', backgroundColor: 'rgb(245, 246, 250)'}} value={errors.description} readOnly/>
             </div>
