@@ -24,7 +24,7 @@ function AirfieldLogPage() {
             <header className="title">
                 Airfield Log
             </header>
-            <div className = 'record' style={{padding: 'unset', textAlign: 'right', border: 'none', display: 'block'}}>
+            <div className = 'record' style={{padding: 'unset', textAlign: 'right', border: 'none', display: 'block', boxShadow: 'none'}}>
                 <div className = 'navigate' style={{borderRadius: '15px'}} onClick= {() => setAllAirfields([{}, ...allAirfields])}>
                     Create
                 </div>
