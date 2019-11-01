@@ -90,14 +90,14 @@ function Flight({info, onModify}) {
                 <span className = 'labels'>
                         Flight Date
                 </span>
-                <input type = 'text' className = 'textbox' style = {{border: 'none', width: '300px', color: 'rgb(139,34,34)', background: 'none'}} value={errors.flightdate} readOnly/>
+                <input type = 'text' className = 'textbox' style = {{border: 'none', width: '70%', color: 'rgb(139,34,34)', background: 'none'}} value={errors.flightdate} readOnly/>
             </div>
             <input type = 'text' className = 'textbox' value = {fields.flightdate || ''} onBlur={() => checkFlightdate(fields.flightdate, errors, setErrors)} onChange = {(event) => updateField(fields, setFields, 'flightdate', event.target.value)}/>
             <div>
                 <span className = 'labels'>
                     Description
                 </span>
-                <input type = 'text' className = 'textbox' style = {{border: 'none', background: 'none'}} value={errors.description} readOnly/>
+                <input type = 'text' className = 'textbox' style = {{border: 'none', background: 'none', width: '70%'}} value={errors.description} readOnly/>
             </div>
             <input type = 'text' className = 'textbox' value = {fields.description || ''} onChange = {(event) => updateField(fields, setFields, 'description', event.target.value)}/>
             <div className={big ? 'big' : 'small'}>
@@ -105,42 +105,42 @@ function Flight({info, onModify}) {
                     <span className = 'labels'>
                         Flight Length (mins)
                     </span>
-                    <input type = 'text' className = 'textbox' style = {{border: 'none', width: '400px', color: 'rgb(139,34,34)', background: 'none'}} value={errors.flighttime} readOnly/>
+                    <input type = 'text' className = 'textbox' style = {{border: 'none', width: '50%', color: 'rgb(139,34,34)', background: 'none'}} value={errors.flighttime} readOnly/>
                 </div>
                 <input type = 'text' className = 'textbox' value = {fields.flighttime || ''} onBlur={() => checkFlighttime(fields.flighttime, errors, setErrors)} onChange = {(event) => updateField(fields, setFields, 'flighttime', event.target.value)}/>
                 <div>    
                     <span className = 'labels'>
                         Callsign
                     </span>
-                    <input type = 'text' className = 'textbox' style = {{border: 'none', width: '450px', color: 'rgb(139,34,34)', background: 'none'}} value={errors.callsign} readOnly/>
+                    <input type = 'text' className = 'textbox' style = {{border: 'none', width: '70%', color: 'rgb(139,34,34)', background: 'none'}} value={errors.callsign} readOnly/>
                 </div>
                 <input type = 'text' className = 'textbox' value = {fields.callsign || ''} onBlur={() => checkCallsign(fields.callsign, errors, setErrors)} onChange = {(event) => updateField(fields, setFields, 'callsign', event.target.value)}/>
                 <div>    
                     <span className = 'labels'>
                         Passengers
                     </span>
-                    <input type = 'text' className = 'textbox' style = {{border: 'none', width: '450px', color: 'rgb(139,34,34)', background: 'none'}} value={errors.passengers} readOnly/>
+                    <input type = 'text' className = 'textbox' style = {{border: 'none', width: '70%', color: 'rgb(139,34,34)', background: 'none'}} value={errors.passengers} readOnly/>
                 </div>
                 <input type = 'text' className = 'textbox' value = {fields.passengers || ''} onBlur={() => checkPassengers(fields.passengers, errors, setErrors)} onChange = {(event) => updateField(fields, setFields, 'passengers', event.target.value)}/>
                 <div>    
                     <span className = 'labels'>
                         Solo or Dual
                     </span>
-                    <input type = 'text' className = 'textbox' style = {{border: 'none', width: '450px', color: 'rgb(139,34,34)', background: 'none'}} value={errors.soloordual} readOnly/>
+                    <input type = 'text' className = 'textbox' style = {{border: 'none', width: '60%', color: 'rgb(139,34,34)', background: 'none'}} value={errors.soloordual} readOnly/>
                 </div>
                 <input type = 'text' className = 'textbox' value = {fields.soloordual || ''} onBlur={() => checkSoloOrDual(fields.soloordual, errors, setErrors)} onChange = {(event) => updateField(fields, setFields, 'soloordual', event.target.value)}/>
                 <div>    
                     <span className = 'labels'>
                         Landings
                     </span>
-                    <input type = 'text' className = 'textbox' style = {{border: 'none', width: '450px', color: 'rgb(139,34,34)', background: 'none'}} value={errors.landings} readOnly/>
+                    <input type = 'text' className = 'textbox' style = {{border: 'none', width: '70%', color: 'rgb(139,34,34)', background: 'none'}} value={errors.landings} readOnly/>
                 </div>
                 <input type = 'text' className = 'textbox' value = {fields.landings || ''} onBlur={() => checkLandings(fields.landings, errors, setErrors)} onChange = {(event) => updateField(fields, setFields, 'landings', event.target.value)}/>
                 <div>    
                     <span className = 'labels'>
                         Airfield
                     </span>
-                    <input type = 'text' className = 'textbox' style = {{border: 'none', background: 'none'}} value={errors.airfield} readOnly/>
+                    <input type = 'text' className = 'textbox' style = {{border: 'none', background: 'none', width: '70%'}} value={errors.airfield} readOnly/>
                 </div>
                 <input type = 'text' className = 'textbox' value = {fields.airfield || ''} onChange = {(event) => updateField(fields, setFields, 'airfield', event.target.value)}/>
             </div>
