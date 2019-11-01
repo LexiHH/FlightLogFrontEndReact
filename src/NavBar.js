@@ -20,7 +20,7 @@ function NavBar() {
     return (
         <div className="nav-bar">
             {
-                btninfo.map((item) => <NavLink to={item.link} activeClassName="thispage" className="navigate" key={item.label} >{item.label}</NavLink>)
+                btninfo.map((item) => <NavLink to={item.link} className="navigate" activeClassName="thispage" key={item.label} >{item.label}</NavLink>)
             }
         </div>
     )

@@ -34,7 +34,8 @@
     user-select: none;
     text-decoration: none;
 }
-.navigate:hover{
+
+.navigate:hover, .thispage:hover{
     background-color: hsl(197, 96%, 30%);  
     border: 3px solid hsl(197, 96%, 30%); 
 }
@@ -44,11 +45,11 @@
     border-color: hsl(197, 96%, 45%); 
 }
 
-.thispage{
-    border-top-color: hsl(197, 96%, 45%);
+.thispage:active {
+    background-color: hsl(197, 96%, 30%);  
+    border: 3px solid hsl(197, 96%, 30%); 
 }
 
-.thispage:active {
-    background-color: hsl(197, 96%, 45%); 
-    border: 3px solid hsl(197, 96%, 45%); 
+.thispage{
+    border-top-color: hsl(197, 96%, 45%);
 }
