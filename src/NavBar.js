@@ -18,13 +18,10 @@ function NavBar() {
     //as an argument into that button function to make the button, btninfo.map returns an array of these resulting labeled buttons.
     //Because the body of the function is all on one line, it is imlicitly implied that it is returned
     return (
-        <div style={{ backgroundColor: 'rgba(9,16,62,1)', position: 'fixed', top: 0, width: '100%'}}>
+        <div className="nav-bar">
             {
                 btninfo.map((item) => <NavLink to={item.link} activeClassName="thispage" className="navigate" key={item.label} >{item.label}</NavLink>)
             }
-
-        
-
         </div>
     )
 }

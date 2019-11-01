@@ -1,13 +1,17 @@
-.navigate, .thispage {
+.nav-bar {
+    background-color:hsl(198, 65%, 20%);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2000;
+}
+
+.navigate, .thispage{
     text-align:center; 
-    /* border-right: solid; */
-    /* border-right-color:rgba(234,236,244,1);  */
-    /* width:120px; */
-    border: 3px solid rgba(9,16,62,1);
+    border: 3px solid hsl(198, 65%, 20%);
     padding: 12px 22px;
     display: inline-block;
-	background-color:rgba(9,16,62,1); 
-	color:rgba(234,236,244,1); 
+    color:hsl(184, 75%, 92%);
 	font-family:'Courier New', monospace; 
     font-size:15px; 
     cursor: pointer;
@@ -20,32 +24,31 @@
     /* border-right: solid; */
     /* border-right-color:rgba(234,236,244,1);  */
     /* width:120px; */
-    border: 3px solid rgba(9,16,62,1);
+    border: 3px solid rgb(56, 56, 56); 
     padding: 12px 22px;
     display: inline-block;
-	background-color:rgba(9,16,62,1); 
-	color:rgba(234,236,244,1); 
+	background-color:rgba(155,155,157, 1); 
+    color:hsl(184, 96%, 45%);
 	font-family:'Courier New', monospace; 
     font-size:15px; 
     user-select: none;
     text-decoration: none;
 }
-.navigate:hover, .thispage:hover{
-        background-color: rgb(80, 80, 82); 
-        border: 3px solid rgb(80, 80, 82); 
+.navigate:hover{
+    background-color: hsl(184, 96%, 30%);  
+    border: 3px solid hsl(184, 96%, 30%); 
 }
 
-.navigate:active, .thispage:hover{
-    background-color: rgb(80, 80, 82); 
-    border: 3px solid rgba(9,16,62,1); 
+.navigate:active{  
+    background-color: hsl(184, 96%, 45%); 
+    border-color: hsl(184, 96%, 45%); 
 }
 
 .thispage{
-    border-bottom-color: aqua;
+    border-top-color: hsl(184, 96%, 45%);
 }
 
-.thispage:hover{
-    background-color: rgb(80, 80, 82); 
-    border: 3px solid rgb(80, 80, 82); 
-    border-bottom-color: aqua;
+.thispage:active {
+    background-color: hsl(184, 96%, 45%); 
+    border: 3px solid hsl(184, 96%, 45%); 
 }
