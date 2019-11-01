@@ -83,6 +83,7 @@
     color: hsl(197, 65%, 20%);
     font-family:'Courier New', monospace; 
     background: none;
+    width:93%;
 }
 
 .textbox:focus {
@@ -90,7 +91,7 @@
 }
 
 .labels {
-    color:hsl(197, 65%, 20%);  
+    color:hsl(197, 65%, 40%);  
     font-size: 15px;
     font-weight: 500;
     font-family:'Courier New', monospace;
