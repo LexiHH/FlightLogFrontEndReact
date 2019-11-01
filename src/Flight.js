@@ -144,7 +144,7 @@ function Flight({info, onModify}) {
                 </div>
                 <input type = 'text' className = 'textbox' value = {fields.airfield || ''} onChange = {(event) => updateField(fields, setFields, 'airfield', event.target.value)}/>
             </div>
-            <div style = {{margin: '10px'}}>
+            <div style = {{margin: '10px', marginTop: '20px'}}>
                 <RecordBar specificFlightFields={fields} onModify={onModify}/>
             </div>
             <div style = {{textAlign: 'center'}}>

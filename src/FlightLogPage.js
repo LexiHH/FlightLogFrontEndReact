@@ -137,9 +137,9 @@ function FlightLogPage() {
                     <input type = 'text' className = 'textbox' style={{borderWidth: '1px', color: 'hsl(197, 65%, 20%)', fontWeight: 'bold', borderColor: 'hsl(197, 65%, 20%)'}} value={landings || ''} readOnly/>
                 </div>
             </div>
-            {allFlights.map((item, index) => <Flight onModify={() => fetchData(setAllFlights)} info={item} key={item.idnumber ? item.idnumber : `blank-${index}`}/>)};
+            {allFlights.map((item, index) => <Flight onModify={() => fetchData(setAllFlights)} info={item} key={item.idnumber ? item.idnumber : `blank-${index}`}/>)}
         </div>
-    );
+    )
 }
 
 export default FlightLogPage;
