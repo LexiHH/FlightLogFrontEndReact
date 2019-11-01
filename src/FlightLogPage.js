@@ -78,63 +78,63 @@ function FlightLogPage() {
     )
 
     return (
-        <div>
+        <div style={{padding: '0px 10px'}}>
             <header className="title">
                 Flight Log
             </header>
-            <div className = 'record' style={{padding: 'unset', textAlign: 'right', border: 'none', display: 'block', boxShadow: 'none'}}>
-                <div className = 'navigate' style={{borderRadius: '15px', margin: '5px', width: '50px'}} onClick= {() => setAllFlights([{}, ...allFlights])}>
+            <div className = 'record' style={{padding: 'unset', textAlign: 'right', border: 'none', display: 'block', boxShadow: 'none', background: 'none'}}>
+                <div className = 'primary-action' onClick= {() => setAllFlights([{}, ...allFlights])}>
                     Create
                 </div>
-                <div className = 'navigate' style={{borderRadius: '15px', margin: '5px', width: '50px'}} onClick = {() => setShowFilter(!showFilter)}>
+                <div className = 'primary-action' onClick = {() => setShowFilter(!showFilter)}>
                     Filter
                 </div>
-                <div className = 'navigate' style={{borderRadius: '15px', margin: '5px', width: '50px'}} onClick = {() => setShowSum(!showSum)}>
+                <div className = 'primary-action' onClick = {() => setShowSum(!showSum)}>
                     Sum
                 </div>
                 <div className = {showFilter ? 'showFilter' : 'hideFilter'}>
-                    <div className = 'labels' style={{textAlign: 'left'}}>
+                    <div className = 'labels' style={{textAlign: 'left', paddingBottom: '5px'}}>
                         Airfield
                     </div>
-                    <input type = 'text' className = 'textbox' value={airfield} onChange = {(event) => updateAirfield(setAirfield, event.target.value)}/>
-                    <div>
-                        <div className = 'navigate' style={{borderRadius: '15px', margin: '5px', width: '50px', textAlign: 'center'}} onClick = {() => filterFlightAirfield(setAllFlights, airfield)}>
+                    <input type = 'text' className = 'textbox' style={{borderWidth: '0.5px', borderColor: 'rgb(56, 56, 56'}} value={airfield} onChange = {(event) => updateAirfield(setAirfield, event.target.value)}/>
+                    <div style={{display: 'block', textAlign: 'right'}}>
+                        <div className = 'filterButtons' onClick = {() => filterFlightAirfield(setAllFlights, airfield)}>
                             Filter
                         </div>
-                        <div className = 'navigate' style={{borderRadius: '15px', margin: '5px', width: '50px', textAlign: 'center'}} onClick = {() => onFilterCancel(fetchData, setAllFlights, setShowFilter, showFilter, setAirfield)}>
+                        <div className = 'filterButtons' onClick = {() => onFilterCancel(fetchData, setAllFlights, setShowFilter, showFilter, setAirfield)}>
                             Cancel
                         </div>
                     </div>
                 </div>
                 <div className = {showSum ? 'showSum' : 'hideSum'}>
-                    <div className = 'labels' style={{textAlign: 'left'}}>
+                    <div className = 'labels' style={{textAlign: 'left', paddingBottom: '5px'}}>
                         From Date
                     </div>
-                    <input type = 'text' className = 'textbox' value={fromDate} onChange = {(event) => updateFromDate(setFromDate, event.target.value)}/>
-                    <div className = 'labels' style={{textAlign: 'left'}}>
+                    <input type = 'text' className = 'textbox' style={{borderWidth: '0.5px', borderColor: 'rgb(56, 56, 56'}} value={fromDate} onChange = {(event) => updateFromDate(setFromDate, event.target.value)}/>
+                    <div className = 'labels' style={{textAlign: 'left', paddingBottom: '5px'}}>
                         To Date
                     </div>
-                    <input type = 'text' className = 'textbox' value={toDate} onChange = {(event) => updateToDate(setToDate, event.target.value)}/>
-                    <div className = 'labels' style={{textAlign: 'left'}}>
+                    <input type = 'text' className = 'textbox' value={toDate} style={{borderWidth: '0.5px', borderColor: 'rgb(56, 56, 56'}} onChange = {(event) => updateToDate(setToDate, event.target.value)}/>
+                    <div className = 'labels' style={{textAlign: 'left', paddingBottom: '5px'}}>
                         Solo or Dual
                     </div>
-                    <input type = 'text' className = 'textbox' value={soloOrDual} onChange = {(event) => updateSoloOrDual(setSoloOrDual, event.target.value)}/>
+                    <input type = 'text' className = 'textbox' value={soloOrDual} style={{borderWidth: '0.5px', borderColor: 'rgb(56, 56, 56'}} onChange = {(event) => updateSoloOrDual(setSoloOrDual, event.target.value)}/>
                     <div>
-                        <div className = 'navigate' style={{borderRadius: '15px', margin: '5px', width: '50px', textAlign: 'center'}} onClick = {() => sumAllLandingsDates(setLandings, setHours, soloOrDual, fromDate, toDate)}>
+                        <div className = 'filterButtons' onClick = {() => sumAllLandingsDates(setLandings, setHours, soloOrDual, fromDate, toDate)}>
                             Sum
                         </div>
-                        <div className = 'navigate' style={{borderRadius: '15px', margin: '5px', width: '50px', textAlign: 'center'}} onClick = {() => onSumCancel(fetchData, setAllFlights, setShowSum, showSum, setHours, setLandings, setFromDate, setToDate, setSoloOrDual)}>
+                        <div className = 'filterButtons' onClick = {() => onSumCancel(fetchData, setAllFlights, setShowSum, showSum, setHours, setLandings, setFromDate, setToDate, setSoloOrDual)}>
                             Cancel
                         </div>
                     </div>
-                    <div className = 'labels' style={{textAlign: 'left'}}>
+                    <div className = 'labels' style={{textAlign: 'left', paddingBottom: '5px'}}>
                         Hours
                     </div>
-                    <input type = 'text' className = 'textbox' value={hours || ''} readOnly/>
-                    <div className = 'labels' style={{textAlign: 'left'}}>
+                    <input type = 'text' className = 'textbox' style={{borderWidth: '0.5px', borderColor: 'rgb(56, 56, 56'}} value={hours || ''} readOnly/>
+                    <div className = 'labels' style={{textAlign: 'left', paddingBottom: '5px'}}>
                         Landings
                     </div>
-                    <input type = 'text' className = 'textbox' value={landings || ''} readOnly/>
+                    <input type = 'text' className = 'textbox' style={{borderWidth: '0.5px', borderColor: 'rgb(56, 56, 56'}} value={landings || ''} readOnly/>
                 </div>
             </div>
             {allFlights.map((item, index) => <Flight onModify={() => fetchData(setAllFlights)} info={item} key={item.idnumber ? item.idnumber : `blank-${index}`}/>)};

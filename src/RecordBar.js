@@ -56,7 +56,7 @@ function RecordBar({specificFlightFields, onModify}) {
         <div>
             <div style={{ borderRadius: '15px', display: 'flex', flexWrap: 'wrap' }}>
                 {
-                    btninfo.map(item => <div className="navigate" key={item.label} style={{borderRadius:'15px', margin: '5px', flexGrow: '1'}} onClick = {item.onClick}>{item.label}</div>)
+                    btninfo.map(item => <div className="record-button" key={item.label} onClick = {item.onClick}>{item.label}</div>)
                 }
             </div>
             {showConfirmBox ? <DeleteConfirmation deleteit={() => deleteFlight(specificFlightFields, onModify)} cancelit={() => setShowConfirmBox(false)}/> : null}
