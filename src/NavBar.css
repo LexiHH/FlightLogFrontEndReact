@@ -1,5 +1,5 @@
 .nav-bar {
-    background-color:hsl(198, 65%, 20%);
+    background-color:hsl(197, 65%, 20%);
     position: fixed;
     top: 0;
     width: 100%;
@@ -8,10 +8,10 @@
 
 .navigate, .thispage{
     text-align:center; 
-    border: 3px solid hsl(198, 65%, 20%);
+    border: 3px solid hsl(197, 65%, 20%);
     padding: 12px 22px;
     display: inline-block;
-    color:hsl(184, 75%, 92%);
+    color:hsl(197, 75%, 92%);
 	font-family:'Courier New', monospace; 
     font-size:15px; 
     cursor: pointer;
@@ -28,27 +28,27 @@
     padding: 12px 22px;
     display: inline-block;
 	background-color:rgba(155,155,157, 1); 
-    color:hsl(184, 96%, 45%);
+    color:hsl(197, 96%, 45%);
 	font-family:'Courier New', monospace; 
     font-size:15px; 
     user-select: none;
     text-decoration: none;
 }
 .navigate:hover{
-    background-color: hsl(184, 96%, 30%);  
-    border: 3px solid hsl(184, 96%, 30%); 
+    background-color: hsl(197, 96%, 30%);  
+    border: 3px solid hsl(197, 96%, 30%); 
 }
 
 .navigate:active{  
-    background-color: hsl(184, 96%, 45%); 
-    border-color: hsl(184, 96%, 45%); 
+    background-color: hsl(197, 96%, 45%); 
+    border-color: hsl(197, 96%, 45%); 
 }
 
 .thispage{
-    border-top-color: hsl(184, 96%, 45%);
+    border-top-color: hsl(197, 96%, 45%);
 }
 
 .thispage:active {
-    background-color: hsl(184, 96%, 45%); 
-    border: 3px solid hsl(184, 96%, 45%); 
+    background-color: hsl(197, 96%, 45%); 
+    border: 3px solid hsl(197, 96%, 45%); 
 }

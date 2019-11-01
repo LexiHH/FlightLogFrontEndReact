@@ -11,10 +11,10 @@ function DeleteConfirmation({deleteit, cancelit}) {
                     Are you sure you want to delete?
                 </div>
                 <div style={{display: 'flex', flexWrap: 'wrap'}}>
-                    <div className='navigate' style={{borderRadius: '15px', flexGrow:'1', margin:'5px'}} onClick={deleteit}>
+                    <div className='record-button' style={{borderRadius: '15px', flexGrow:'1', margin:'5px'}} onClick={deleteit}>
                         Delete
                     </div>
-                    <div className='navigate' style={{borderRadius: '15px', flexGrow:'1', margin:'5px'}} onClick={cancelit}>
+                    <div className='record-button' style={{borderRadius: '15px', flexGrow:'1', margin:'5px'}} onClick={cancelit}>
                         Cancel
                     </div>
                 </div>

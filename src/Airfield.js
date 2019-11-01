@@ -15,10 +15,7 @@ function Airfield({info, onModify}) {
     //{info} is the same as doing const info = props.info (object destructuring)
     return (
         <div className = 'record'>
-            <div className = 'labels'>
-                ID
-            </div>
-            <input type = 'text' className = 'textbox' value = {fields.idnumber} readOnly/>
+            <div className='idnumber'>{fields.idnumber}</div>
             <div className = 'labels'>
                 Description
             </div>
