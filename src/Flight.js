@@ -12,7 +12,10 @@ function updateField(fields, setFields, whichBox, whatsInBox) {
 function checkFlightdate(currentFlightDate, errors, setErrors) {
     const allErrors = {...errors};
     let error = '';
-    if(currentFlightDate.search(/^\d{4}-\d{2}-\d{2}$/)) {
+    if(!currentFlightDate) {
+        error = 'Date must be in format YYYY-MM-DD';
+    }
+    else if(currentFlightDate.search(/^\d{4}-\d{2}-\d{2}$/)) {
         error = 'Date must be in format YYYY-MM-DD';
     }
     allErrors['flightdate'] = error;
@@ -32,7 +35,10 @@ function checkFlighttime(currentFlighttime, errors, setErrors) {
 function checkCallsign(currentCallsign, errors, setErrors) {
     const allErrors = {...errors};
     let error = '';
-    if(currentCallsign.search(/^G-[A-Z]{4}$/)) {
+    if(!currentCallsign) {
+        error = 'Must be in format G- followed by three capital letters';
+    }
+    else if(currentCallsign.search(/^G-[A-Z]{4}$/)) {
         error = 'Must be in format G- followed by three capital letters';
     }
     allErrors['callsign'] = error;
